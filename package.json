@@ -1,0 +1,16 @@
+{
+  "name": "website-section-templates",
+  "description": "Plantillas de sección de sitios web.",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "workspaces": [
+    "projects/*"
+  ],
+  "keywords": [],
+  "author": "Alan Bernal E.",
+  "license": "ISC"
+}
