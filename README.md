@@ -30,3 +30,4 @@ npm install
 
 ## Proyectos
 - Header Style 01
+- Main Banner Style 01
