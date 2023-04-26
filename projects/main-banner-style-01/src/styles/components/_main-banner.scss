@@ -1,0 +1,46 @@
+.main-banner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+
+  &__content {
+    width: 600px;
+    max-width: 90%;
+    position: relative;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+
+    @media (min-width: 768px) {
+      font-size: 4rem;
+    }
+  }
+
+  &__paragraph {
+    margin-bottom: 2rem;
+  }
+
+  &__buttons {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}
