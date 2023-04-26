@@ -1,0 +1,59 @@
+---
+import CloseButton from "./CloseButton.astro";
+import HamburgerButton from "./HamburgerButton.astro";
+---
+
+<header class="header">
+  <div class="header__container container">
+    <a class="header__brand">
+      <img class="header__logo" src="/images/logotipo/company-logo-white.svg" alt="" />
+      <img class="header__logo header__logo--full" src="/images/logotipo/company-logo.svg" alt="" />
+    </a>
+    <HamburgerButton class="header__hamburger" id="menu-toggle-button" />
+    <nav class="header__navigation navigation">
+      <div class="navigation__header">
+        <div class="navigation__logo">
+          <img src="/images/logotipo/company-logo.svg" alt="Logotipo" />
+        </div>
+        <div class="navigation__close">
+          <CloseButton id="close-button" />
+        </div>
+      </div>
+      <ul class="navigation__items">
+        <li class="navigation__item"><a href="#" class="navigation__link">Home</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">About us</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Products</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">Services</a></li>
+        <li class="navigation__item"><a href="#" class="navigation__link">FAQ</a></li>
+        <li class="navigation__item">
+          <a href="#" class="navigation__link navigation__link--button">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Evento para abrir menú de navegación
+  document.getElementById("menu-toggle-button").addEventListener("click", () => {
+    document.querySelector(".navigation").classList.add("navigation--visible");
+  });
+
+  // Evento para cerar menú de navegación
+  document.getElementById("close-button").addEventListener("click", () => {
+    document.querySelector(".navigation").classList.remove("navigation--visible");
+  });
+
+  // Función para menú sticky
+  const isScrolling = () => {
+    const header = document.querySelector(".header");
+    let windowPosition = window.scrollY > 100;
+    header.classList.toggle("header--sticky", windowPosition);
+  };
+
+  // Ejecución al cargar la página
+  isScrolling();
+
+  // Ejecución al lanzarse evento scroll
+  window.addEventListener("scroll", isScrolling);
+</script>
